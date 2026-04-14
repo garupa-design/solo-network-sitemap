@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Site Map — Solo Network</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #f7f8fa; color: #1a202c;
+      min-height: 100vh; padding: 2rem;
+    }
+    header {
+      max-width: 960px; margin: 0 auto 2rem;
+      border-bottom: 1px solid #e2e8f0; padding-bottom: 1.5rem;
+    }
+    header h1 { font-size: 1.6rem; font-weight: 700; color: #1a202c; letter-spacing: -0.02em; }
+    header p  { color: #718096; font-size: 0.85rem; margin-top: 0.3rem; }
+    .stats { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
+    .stat {
+      background: #ffffff; border: 1px solid #e2e8f0;
+      border-radius: 8px; padding: 0.5rem 1rem;
+      font-size: 0.8rem; color: #718096;
+    }
+    .stat strong { color: #1a202c; font-size: 1rem; display: block; }
+    .search-wrap { max-width: 960px; margin: 0 auto 1.5rem; }
+    #search {
+      width: 100%; padding: 0.75rem 1rem; border-radius: 8px;
+      border: 1px solid #e2e8f0; background: #ffffff; color: #1a202c;
+      font-size: 0.95rem; outline: none; transition: border-color 0.2s;
+    }
+    #search:focus { border-color: #4a90e2; }
+    #search::placeholder { color: #a0aec0; }
+    #no-results {
+      display: none; color: #a0aec0; font-size: 0.9rem;
+      margin-top: 0.75rem; padding-left: 0.5rem;
+    }
+    .tree-wrap { max-width: 960px; margin: 0 auto; }
+    ul.root-list { list-style: none; padding-left: 0; border-left: none; margin: 0; }
+    ul {
+      list-style: none; padding-left: 1.5rem;
+      border-left: 1px solid #e2e8f0; margin: 0.25rem 0 0.5rem;
+    }
+    li.root-item {
+      padding: 0.75rem 0.4rem 0.25rem; font-size: 0.8rem;
+      font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: #a0aec0;
+      border-radius: 4px; margin-top: 0.5rem;
+    }
+    li.root-item:first-child { margin-top: 0; }
+    li {
+      padding: 0.3rem 0.4rem; font-size: 0.9rem;
+      line-height: 1.5; border-radius: 4px; transition: background 0.15s;
+    }
+    li:not(.root-item):not(.cat-header):hover { background: #edf2f7; }
+    li.hidden { display: none; }
+    .arrow { color: #a0aec0; margin-right: 0.4rem; user-select: none; }
+    /* Root section headers — subdued */
+    .category { color: #1a202c; font-weight: 700; }
+    /* Category headers — prominent */
+    li.cat-header {
+      padding: 0.6rem 0.4rem 0.15rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #1a202c;
+      cursor: default;
+      margin-top: 0.1rem;
+    }
+    li.cat-header:hover { background: transparent; }
+    .cat-label { color: #a0aec0; font-weight: 700; }
+    /* Items under a category — extra left indent */
+    li.cat-child { padding-left: 1.8rem; }
+    /* Last item of a category group — bottom spacing */
+    li.cat-last { margin-bottom: 0.6rem; }
+    a { color: #2b6cb0; text-decoration: none; transition: color 0.15s; }
+    a:hover { color: #2c5282; text-decoration: underline; }
+    .badge {
+      display: inline-block; font-size: 0.65rem; font-weight: 600;
+      padding: 0.15rem 0.45rem; border-radius: 4px; margin-left: 0.4rem;
+      vertical-align: middle; text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .badge.ext { background: #fff5f5; color: #c53030; border: 1px solid #fed7d7; }
+    .badge.dup { background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; }
+    footer {
+      max-width: 960px; margin: 3rem auto 0; padding-top: 1.5rem;
+      border-top: 1px solid #e2e8f0; font-size: 0.78rem;
+      color: #a0aec0; text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Solo Network - Site Map</h1>
+    <p>Abril 2026</p>
+    <div class="stats">
+      <div class="stat"><strong>184</strong> páginas mapeadas</div>
+      <div class="stat"><strong>19</strong> links externos</div>
+      <div class="stat"><strong>63</strong> URLs duplicadas</div>
+    </div>
+  </header>
+  <div class="search-wrap">
+    <input type="text" id="search"
+      placeholder="Buscar página ou categoria..."
+      autocomplete="off" spellcheck="false"/>
+    <p id="no-results">Nenhum resultado encontrado.</p>
+  </div>
+  <div class="tree-wrap" id="tree">
+    <ul class="root-list">
+  <li data-search="sobre nós " class="root-item"><span class="category">Sobre Nós</span>
+<ul >
+  <li class="cat-header" data-search="empresa"><span class="arrow">↳</span> <span class="cat-label">Empresa</span></li>
+  <li data-search="sobre a solo network  [1]" class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/sobre-nos/nossa-empresa" target="_blank" rel="noopener">Sobre a Solo Network</a><span class="badge dup">1</span>
+<ul >
+  <li data-search="nossos clientes  [1]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/clientes" target="_blank" rel="noopener">Nossos Clientes</a><span class="badge dup">1</span></li>
+</ul>
+</li>
+  <li data-search="nossos clientes  [2]" class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/clientes" target="_blank" rel="noopener">Nossos Clientes</a><span class="badge dup">2</span>
+<ul >
+  <li data-search="empresa  [2]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/sobre-nos/nossa-empresa" target="_blank" rel="noopener">Empresa</a><span class="badge dup">2</span></li>
+</ul>
+</li>
+  <li data-search="certificações " class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/certificacoes" target="_blank" rel="noopener">Certificações</a></li>
+  <li data-search="premiações " class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/premios" target="_blank" rel="noopener">Premiações</a>
+<ul >
+  <li data-search="nossos clientes  [3]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/clientes" target="_blank" rel="noopener">Nossos Clientes</a><span class="badge dup">3</span></li>
+</ul>
+</li>
+  <li data-search="vagas " class="cat-child cat-last"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/vagas" target="_blank" rel="noopener">Vagas</a>
+<ul >
+  <li data-search="conheça a solo network  [3]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/sobre-nos/nossa-empresa" target="_blank" rel="noopener">Conheça a Solo Network</a><span class="badge dup">3</span></li>
+</ul>
+</li>
+  <li class="cat-header" data-search="parcerias"><span class="arrow">↳</span> <span class="cat-label">Parcerias</span></li>
+  <li data-search="seja um parceiro " class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/parcerias" target="_blank" rel="noopener">Seja um Parceiro</a></li>
+  <li data-search="parceiros isv | startups " class="cat-child cat-last"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/solo-cloud-code" target="_blank" rel="noopener">Parceiros ISV | Startups</a></li>
+  <li class="cat-header" data-search="governo"><span class="arrow">↳</span> <span class="cat-label">Governo</span></li>
+  <li data-search="atendimento governo " class="cat-child cat-last"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/governo-licitacao-edital-ata" target="_blank" rel="noopener">Atendimento Governo</a></li>
+  <li class="cat-header" data-search="cases"><span class="arrow">↳</span> <span class="cat-label">Cases</span></li>
+  <li data-search="cases de sucesso " class="cat-child cat-last"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/cases" target="_blank" rel="noopener">Cases de Sucesso</a>
+<ul >
+  <li data-search="nossos clientes  [4]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/clientes" target="_blank" rel="noopener">Nossos Clientes</a><span class="badge dup">4</span></li>
+</ul>
+</li>
+  <li class="cat-header" data-search="códigos"><span class="arrow">↳</span> <span class="cat-label">Códigos</span></li>
+  <li data-search="política e código de conduta e ética " class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Downloads/Politica_CodigoConduta_Etica_Solo_Network.pdf" target="_blank" rel="noopener">Política e Código de Conduta e Ética</a></li>
+  <li data-search="política de compliance, anticorrupção e antisuborno " class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/downloads/GRC_Política-de-Compliance-Anticorrupcao-e-Antissuborno.pdf" target="_blank" rel="noopener">Política de Compliance, Anticorrupção e Antisuborno</a></li>
+  <li data-search="política de proteção de dados e privacidade " class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/downloads/GRC_Política-de- Proteção-de-Dados-e-Privacidade.pdf" target="_blank" rel="noopener">Política de Proteção de Dados e Privacidade</a></li>
+  <li data-search="política de segurança da informação " class="cat-child cat-last"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/pdfs/PL-CYB.SI.007_C Politica-de-Seguranca-da-Informacao-R04-2025.pdf" target="_blank" rel="noopener">Política de Segurança da Informação</a></li>
+</ul>
+</li>
+  <li data-search="cybersecurity " class="root-item"><span class="category">Cybersecurity</span>
+<ul >
+  <li class="cat-header" data-search="institucional"><span class="arrow">↳</span> <span class="cat-label">Institucional</span></li>
+  <li data-search="sobre a solo iron  [site externo]" class="cat-child cat-last"><span class="arrow">↳</span> <a href="https://soloiron.com.br" target="_blank" rel="noopener">Sobre a Solo Iron</a><span class="badge ext">site externo</span></li>
+  <li class="cat-header" data-search="serviços"><span class="arrow">↳</span> <span class="cat-label">Serviços</span></li>
+  <li data-search="iron edge  [site externo]" class="cat-child"><span class="arrow">↳</span> <a href="https://soloiron.com.br/iron-edge" target="_blank" rel="noopener">Iron Edge</a><span class="badge ext">site externo</span></li>
+  <li data-search="iron endpoint protection  [site externo]" class="cat-child"><span class="arrow">↳</span> <a href="https://soloiron.com.br/iron-endpoint-protection" target="_blank" rel="noopener">Iron Endpoint Protection</a><span class="badge ext">site externo</span></li>
+  <li data-search="iron security center  [site externo]" class="cat-child"><span class="arrow">↳</span> <a href="https://soloiron.com.br/iron-security-center" target="_blank" rel="noopener">Iron Security Center</a><span class="badge ext">site externo</span></li>
+  <li data-search="iron business continuity  [site externo]" class="cat-child"><span class="arrow">↳</span> <a href="https://soloiron.com.br/iron-business-continuity" target="_blank" rel="noopener">Iron Business Continuity</a><span class="badge ext">site externo</span></li>
+  <li data-search="iron human firewall  [site externo]" class="cat-child"><span class="arrow">↳</span> <a href="https://soloiron.com.br/iron-human-firewall" target="_blank" rel="noopener">Iron Human Firewall</a><span class="badge ext">site externo</span></li>
+  <li data-search="iron pesi  [site externo]" class="cat-child"><span class="arrow">↳</span> <a href="https://soloiron.com.br/iron-pesi" target="_blank" rel="noopener">Iron PESI</a><span class="badge ext">site externo</span></li>
+  <li data-search="iron offensive security  [site externo]" class="cat-child"><span class="arrow">↳</span> <a href="https://soloiron.com.br/iron-offensive-security" target="_blank" rel="noopener">Iron Offensive Security</a><span class="badge ext">site externo</span></li>
+  <li data-search="iron extended protection  [site externo]" class="cat-child"><span class="arrow">↳</span> <a href="https://soloiron.com.br/iron-extended-protection" target="_blank" rel="noopener">Iron Extended Protection</a><span class="badge ext">site externo</span></li>
+  <li data-search="iron collab  [site externo]" class="cat-child"><span class="arrow">↳</span> <a href="https://soloiron.com.br/iron-collab" target="_blank" rel="noopener">Iron Collab</a><span class="badge ext">site externo</span></li>
+  <li data-search="aig seguros  [site externo]" class="cat-child cat-last"><span class="arrow">↳</span> <a href="https://soloiron.com.br/aig-seguros" target="_blank" rel="noopener">AIG Seguros</a><span class="badge ext">site externo</span></li>
+  <li class="cat-header" data-search="parceiros"><span class="arrow">↳</span> <span class="cat-label">Parceiros</span></li>
+  <li data-search="kaspersky  [site externo]" class="cat-child"><span class="arrow">↳</span> <a href="https://www.soloiron.com.br/kaspersky" target="_blank" rel="noopener">Kaspersky</a><span class="badge ext">site externo</span></li>
+  <li data-search="checkpoint  [site externo]" class="cat-child"><span class="arrow">↳</span> <a href="https://www.soloiron.com.br/check-point" target="_blank" rel="noopener">Checkpoint</a><span class="badge ext">site externo</span></li>
+  <li data-search="microsoft  [site externo]" class="cat-child"><span class="arrow">↳</span> <a href="https://www.soloiron.com.br/microsoft" target="_blank" rel="noopener">Microsoft</a><span class="badge ext">site externo</span></li>
+  <li data-search="envolve ambientes seguros  [site externo]" class="cat-child"><span class="arrow">↳</span> <a href="https://www.soloiron.com.br/envolve-ambientes-seguros" target="_blank" rel="noopener">Envolve Ambientes Seguros</a><span class="badge ext">site externo</span></li>
+  <li data-search="knowbe4  [site externo]" class="cat-child"><span class="arrow">↳</span> <a href="https://www.soloiron.com.br/knowbe4" target="_blank" rel="noopener">KnowBe4</a><span class="badge ext">site externo</span></li>
+  <li data-search="veeam  [site externo]" class="cat-child"><span class="arrow">↳</span> <a href="https://www.soloiron.com.br/veeam" target="_blank" rel="noopener">Veeam</a><span class="badge ext">site externo</span></li>
+  <li data-search="google cloud  [site externo]" class="cat-child"><span class="arrow">↳</span> <a href="https://www.soloiron.com.br/google" target="_blank" rel="noopener">Google Cloud</a><span class="badge ext">site externo</span></li>
+  <li data-search="aig seguros  [site externo]" class="cat-child"><span class="arrow">↳</span> <a href="https://www.soloiron.com.br/aig-seguros" target="_blank" rel="noopener">AIG Seguros</a><span class="badge ext">site externo</span></li>
+  <li data-search="keepit " class="cat-child cat-last"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/keepit" target="_blank" rel="noopener">Keepit</a></li>
+</ul>
+</li>
+  <li data-search="cloud " class="root-item"><span class="category">Cloud</span>
+<ul >
+  <li class="cat-header" data-search="serviços gerenciados"><span class="arrow">↳</span> <span class="cat-label">Serviços Gerenciados</span></li>
+  <li data-search="solo cloud " class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/cloud/solo-cloud" target="_blank" rel="noopener">Solo Cloud</a>
+<ul >
+  <li data-search="microsoft azure  [1]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Microsoft/microsoft-azure" target="_blank" rel="noopener">Microsoft Azure</a><span class="badge dup">1</span></li>
+  <li data-search="google cloud  [1]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/google/google-cloud" target="_blank" rel="noopener">Google Cloud</a><span class="badge dup">1</span></li>
+  <li data-search="aws - amazon web services  [1]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/cloud/aws-amazon" target="_blank" rel="noopener">AWS - Amazon Web Services</a><span class="badge dup">1</span></li>
+</ul>
+</li>
+  <li data-search="solo finops " class="cat-child cat-last"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Servicos/solo-finops" target="_blank" rel="noopener">Solo FinOps</a></li>
+  <li class="cat-header" data-search="produtos"><span class="arrow">↳</span> <span class="cat-label">Produtos</span></li>
+  <li data-search="microsoft azure  [2]" class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Microsoft/microsoft-azure" target="_blank" rel="noopener">Microsoft Azure</a><span class="badge dup">2</span>
+<ul >
+  <li data-search="azure  [3]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Microsoft/microsoft-azure" target="_blank" rel="noopener">Azure</a><span class="badge dup">3</span></li>
+  <li data-search="microsoft 365  [1]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Microsoft/microsoft-365" target="_blank" rel="noopener">Microsoft 365</a><span class="badge dup">1</span></li>
+  <li data-search="microsoft 365 business  [1]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Microsoft/microsoft-365/m365-business-plans" target="_blank" rel="noopener">Microsoft 365 Business</a><span class="badge dup">1</span></li>
+  <li data-search="microsoft 365 enterprise  [1]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Microsoft/microsoft-365/m365-enterprise-plans" target="_blank" rel="noopener">Microsoft 365 Enterprise</a><span class="badge dup">1</span></li>
+  <li data-search="windows 11  [1]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Microsoft/windows-11" target="_blank" rel="noopener">Windows 11</a><span class="badge dup">1</span></li>
+  <li data-search="office 2021  [1]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Microsoft/microsoft-office-2021" target="_blank" rel="noopener">Office 2021</a><span class="badge dup">1</span></li>
+</ul>
+</li>
+  <li data-search="google cloud  [2]" class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/google/google-cloud" target="_blank" rel="noopener">Google Cloud</a><span class="badge dup">2</span>
+<ul >
+  <li data-search="google cloud platform  [3]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/google/google-cloud" target="_blank" rel="noopener">Google Cloud Platform</a><span class="badge dup">3</span></li>
+  <li data-search="google workspace  [1]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/google/google-workspace" target="_blank" rel="noopener">Google Workspace</a><span class="badge dup">1</span></li>
+  <li data-search="google secops  [1]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/google/google-chronicle" target="_blank" rel="noopener">Google SecOps</a><span class="badge dup">1</span></li>
+  <li data-search="gemini  [1]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/google/gemini-ia-generativa" target="_blank" rel="noopener">Gemini</a><span class="badge dup">1</span></li>
+</ul>
+</li>
+  <li data-search="aws - amazon web services  [2]" class="cat-child cat-last"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/cloud/aws-amazon" target="_blank" rel="noopener">AWS - Amazon Web Services</a><span class="badge dup">2</span></li>
+</ul>
+</li>
+  <li data-search="serviços " class="root-item"><span class="category">Serviços</span>
+<ul >
+  <li class="cat-header" data-search="soluções de colaboração"><span class="arrow">↳</span> <span class="cat-label">Soluções de Colaboração</span></li>
+  <li data-search="solo colaboração 365 " class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Projetos-Servicos/solo-colaboracao-365" target="_blank" rel="noopener">Solo Colaboração 365</a></li>
+  <li data-search="office 365 " class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/produtos/microsoft/microsoft-office-365.aspx" target="_blank" rel="noopener">Office 365</a>
+<ul >
+  <li data-search="azure  [4]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Microsoft/microsoft-azure" target="_blank" rel="noopener">Azure</a><span class="badge dup">4</span></li>
+  <li data-search="microsoft 365  [2]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Microsoft/microsoft-365" target="_blank" rel="noopener">Microsoft 365</a><span class="badge dup">2</span></li>
+  <li data-search="microsoft 365 business  [2]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Microsoft/microsoft-365/m365-business-plans" target="_blank" rel="noopener">Microsoft 365 Business</a><span class="badge dup">2</span></li>
+  <li data-search="microsoft 365 enterprise  [2]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Microsoft/microsoft-365/m365-enterprise-plans" target="_blank" rel="noopener">Microsoft 365 Enterprise</a><span class="badge dup">2</span></li>
+  <li data-search="windows 11  [2]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Microsoft/windows-11" target="_blank" rel="noopener">Windows 11</a><span class="badge dup">2</span></li>
+  <li data-search="office 2021  [2]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Microsoft/microsoft-office-2021" target="_blank" rel="noopener">Office 2021</a><span class="badge dup">2</span></li>
+</ul>
+</li>
+  <li data-search="microsoft 365 " class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/produtos/microsoft/microsoft-365" target="_blank" rel="noopener">Microsoft 365</a>
+<ul >
+  <li data-search="azure  [5]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Microsoft/microsoft-azure" target="_blank" rel="noopener">Azure</a><span class="badge dup">5</span></li>
+  <li data-search="microsoft 365  [3]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Microsoft/microsoft-365" target="_blank" rel="noopener">Microsoft 365</a><span class="badge dup">3</span></li>
+  <li data-search="microsoft 365 business  [3]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Microsoft/microsoft-365/m365-business-plans" target="_blank" rel="noopener">Microsoft 365 Business</a><span class="badge dup">3</span></li>
+  <li data-search="microsoft 365 enterprise  [3]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Microsoft/microsoft-365/m365-enterprise-plans" target="_blank" rel="noopener">Microsoft 365 Enterprise</a><span class="badge dup">3</span></li>
+  <li data-search="windows 11  [3]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Microsoft/windows-11" target="_blank" rel="noopener">Windows 11</a><span class="badge dup">3</span></li>
+  <li data-search="office 2021  [3]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Microsoft/microsoft-office-2021" target="_blank" rel="noopener">Office 2021</a><span class="badge dup">3</span></li>
+</ul>
+</li>
+  <li data-search="google workspace  [2]" class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/google/google-workspace" target="_blank" rel="noopener">Google Workspace</a><span class="badge dup">2</span>
+<ul >
+  <li data-search="google cloud platform  [4]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/google/google-cloud" target="_blank" rel="noopener">Google Cloud Platform</a><span class="badge dup">4</span></li>
+  <li data-search="google workspace  [3]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/google/google-workspace" target="_blank" rel="noopener">Google Workspace</a><span class="badge dup">3</span></li>
+  <li data-search="google secops  [2]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/google/google-chronicle" target="_blank" rel="noopener">Google SecOps</a><span class="badge dup">2</span></li>
+  <li data-search="gemini  [2]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/google/gemini-ia-generativa" target="_blank" rel="noopener">Gemini</a><span class="badge dup">2</span></li>
+</ul>
+</li>
+  <li data-search="copilot m365 premium " class="cat-child cat-last"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Projetos-Servicos/copilot-m365-premium" target="_blank" rel="noopener">Copilot M365 Premium</a></li>
+  <li class="cat-header" data-search="soluções corporativas"><span class="arrow">↳</span> <span class="cat-label">Soluções Corporativas</span></li>
+  <li data-search="solo document " class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Projetos-Servicos/solo-document" target="_blank" rel="noopener">Solo Document</a></li>
+  <li data-search="consultoria monday " class="cat-child cat-last"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Projetos-Servicos/consultoria-monday" target="_blank" rel="noopener">Consultoria Monday</a></li>
+  <li class="cat-header" data-search="projetos & serviços"><span class="arrow">↳</span> <span class="cat-label">Projetos & Serviços</span></li>
+  <li data-search="solo it care " class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Projetos-Servicos/solo-it-care" target="_blank" rel="noopener">Solo IT Care</a>
+<ul >
+  <li data-search="solo endpoint protection  [1]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Projetos-Servicos/solo-endpoint-protection" target="_blank" rel="noopener">Solo Endpoint Protection</a><span class="badge dup">1</span></li>
+  <li data-search="solo colaboração  [1]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Projetos-Servicos/solo-colaboracao" target="_blank" rel="noopener">Solo Colaboração</a><span class="badge dup">1</span></li>
+  <li data-search="solo noc  [1]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Projetos-Servicos/solo-monitoramento-unificado-noc" target="_blank" rel="noopener">Solo NOC</a><span class="badge dup">1</span></li>
+  <li data-search="solo firewall  [1]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Projetos-Servicos/solo-firewall" target="_blank" rel="noopener">Solo Firewall</a><span class="badge dup">1</span></li>
+</ul>
+</li>
+  <li data-search="consultoria em ti " class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Projetos-Servicos?consultoria" target="_blank" rel="noopener">Consultoria em TI</a></li>
+  <li data-search="projetos personalizados " class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Projetos-Servicos?projetos" target="_blank" rel="noopener">Projetos Personalizados</a></li>
+  <li data-search="monitoramento (noc)  [2]" class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Projetos-Servicos/solo-monitoramento-unificado-noc" target="_blank" rel="noopener">Monitoramento (NOC)</a><span class="badge dup">2</span></li>
+  <li data-search="consultoria bim " class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/autodesk-bim" target="_blank" rel="noopener">Consultoria BIM</a></li>
+  <li data-search="solo app innovation " class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Projetos-Servicos/solo-app-innovation" target="_blank" rel="noopener">Solo App Innovation</a></li>
+  <li data-search="solo data " class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Projetos-Servicos/solo-data" target="_blank" rel="noopener">Solo Data</a></li>
+  <li data-search="solo ia " class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Projetos-Servicos/solo-ia" target="_blank" rel="noopener">Solo IA</a></li>
+  <li data-search="solo devsecops " class="cat-child cat-last"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Projetos-Servicos/solo-devsecops" target="_blank" rel="noopener">Solo DevSecOps</a></li>
+</ul>
+</li>
+  <li data-search="produtos " class="root-item"><span class="category">Produtos</span>
+<ul >
+  <li class="cat-header" data-search="software corporativo"><span class="arrow">↳</span> <span class="cat-label">Software Corporativo</span></li>
+  <li data-search="microsoft " class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/produtos/microsoft" target="_blank" rel="noopener">Microsoft</a>
+<ul >
+  <li data-search="azure  [6]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Microsoft/microsoft-azure" target="_blank" rel="noopener">Azure</a><span class="badge dup">6</span></li>
+  <li data-search="microsoft 365  [4]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Microsoft/microsoft-365" target="_blank" rel="noopener">Microsoft 365</a><span class="badge dup">4</span></li>
+  <li data-search="microsoft 365 business  [4]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Microsoft/microsoft-365/m365-business-plans" target="_blank" rel="noopener">Microsoft 365 Business</a><span class="badge dup">4</span></li>
+  <li data-search="microsoft 365 enterprise  [4]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Microsoft/microsoft-365/m365-enterprise-plans" target="_blank" rel="noopener">Microsoft 365 Enterprise</a><span class="badge dup">4</span></li>
+  <li data-search="windows 11  [4]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Microsoft/windows-11" target="_blank" rel="noopener">Windows 11</a><span class="badge dup">4</span></li>
+  <li data-search="office 2021  [4]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Microsoft/microsoft-office-2021" target="_blank" rel="noopener">Office 2021</a><span class="badge dup">4</span></li>
+</ul>
+</li>
+  <li data-search="monday.com " class="cat-child cat-last"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/monday" target="_blank" rel="noopener">monday.com</a></li>
+  <li class="cat-header" data-search="engenharia & design"><span class="arrow">↳</span> <span class="cat-label">Engenharia & Design</span></li>
+  <li data-search="autodesk " class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/produtos/autodesk" target="_blank" rel="noopener">Autodesk</a>
+<ul >
+  <li data-search="autodesk construction cloud " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Autodesk/autodesk-construction-cloud" target="_blank" rel="noopener">Autodesk Construction Cloud</a></li>
+  <li data-search="autocad " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Autodesk/autodesk-autocad" target="_blank" rel="noopener">AutoCad</a></li>
+  <li data-search="autocad lt " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Autodesk/AutoCAD-LT" target="_blank" rel="noopener">AutoCad LT</a></li>
+  <li data-search="3d max " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Autodesk/3d-max" target="_blank" rel="noopener">3D Max</a></li>
+  <li data-search="maya " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Autodesk/maya" target="_blank" rel="noopener">Maya</a></li>
+  <li data-search="revit " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Autodesk/revit" target="_blank" rel="noopener">Revit</a></li>
+  <li data-search="bim " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Autodesk/bim" target="_blank" rel="noopener">BIM</a></li>
+</ul>
+</li>
+  <li data-search="adobe " class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/produtos/adobe" target="_blank" rel="noopener">Adobe</a>
+<ul >
+  <li data-search="adobe acrobat standard " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Adobe/adobe-acrobat-standard" target="_blank" rel="noopener">Adobe Acrobat Standard</a></li>
+  <li data-search="adobe acrobat pro " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Adobe/adobe-acrobat-pro" target="_blank" rel="noopener">Adobe Acrobat Pro</a></li>
+  <li data-search="acrobat sign solutions " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Adobe/acrobat-sign-solutions" target="_blank" rel="noopener">Acrobat Sign Solutions</a></li>
+  <li data-search="creative cloud " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Adobe/adobe-creative-cloud" target="_blank" rel="noopener">Creative Cloud</a></li>
+  <li data-search="document cloud " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Adobe/adobe-document-cloud" target="_blank" rel="noopener">Document Cloud</a></li>
+  <li data-search="adobe firefly " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Adobe/adobe-firefly" target="_blank" rel="noopener">Adobe Firefly</a></li>
+  <li data-search="adobe stock " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Adobe/adobe-stock" target="_blank" rel="noopener">Adobe Stock</a></li>
+</ul>
+</li>
+  <li data-search="corel " class="cat-child cat-last"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/produtos/corel" target="_blank" rel="noopener">Corel</a>
+<ul >
+  <li data-search="corel graphics suite 2022 " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/produtos/Revenda-Corel/coreldraw-graphics-suite-2022" target="_blank" rel="noopener">Corel Graphics Suite 2022</a></li>
+  <li data-search="corel graphics suite 2020 " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Revenda-Corel/coreldraw-graphics-suite-2020" target="_blank" rel="noopener">Corel Graphics Suite 2020</a></li>
+  <li data-search="corel graphics suite 2019 " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Revenda-Corel/coreldraw-graphics-suite-2019" target="_blank" rel="noopener">Corel Graphics Suite 2019</a></li>
+  <li data-search="corel graphics suite 2018 " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Revenda-Corel/coreldraw-graphics-suite-2018" target="_blank" rel="noopener">Corel Graphics Suite 2018</a></li>
+  <li data-search="promoções " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/promocoes.aspx?produtos=Softwares-Corel" target="_blank" rel="noopener">Promoções</a></li>
+</ul>
+</li>
+  <li class="cat-header" data-search="virtualização"><span class="arrow">↳</span> <span class="cat-label">Virtualização</span></li>
+  <li data-search="vmware " class="cat-child cat-last"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/produtos/vmware" target="_blank" rel="noopener">VMware</a></li>
+  <li class="cat-header" data-search="segurança"><span class="arrow">↳</span> <span class="cat-label">Segurança</span></li>
+  <li data-search="kaspersky  [1]" class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/produtos/solucoes-antivirus-kaspersky/Antivirus-Corporativo-Kaspersky-For-Business" target="_blank" rel="noopener">Kaspersky</a><span class="badge dup">1</span>
+<ul >
+  <li data-search="sobre a kaspersky  [2]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/produtos/solucoes-antivirus-kaspersky/Antivirus-Corporativo-Kaspersky-For-Business" target="_blank" rel="noopener">Sobre a Kaspersky</a><span class="badge dup">2</span></li>
+  <li data-search="small office security " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/cybersecurity/kaspersky/small-office-security" target="_blank" rel="noopener">Small Office Security</a></li>
+  <li data-search="kaspersky next foundations " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/cybersecurity/kaspersky/kaspersky-next-foundations" target="_blank" rel="noopener">Kaspersky Next Foundations</a></li>
+  <li data-search="kaspersky next edr foundations " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/cybersecurity/kaspersky/kaspersky-next-edr-foundations" target="_blank" rel="noopener">Kaspersky Next EDR Foundations</a></li>
+  <li data-search="kaspersky security for storage " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Solucoes-Antivirus-Kaspersky/Antivirus-Corporativo-Kaspersky-For-Business/kaspersky-security-for-storage" target="_blank" rel="noopener">Kaspersky Security for Storage</a></li>
+  <li data-search="kaspersky industrial cybersecurity " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Solucoes-Antivirus-Kaspersky/Antivirus-Corporativo-Kaspersky-For-Business/kaspersky-industrial-cybersecurity" target="_blank" rel="noopener">Kaspersky Industrial CyberSecurity</a></li>
+  <li data-search="kaspersky hybrid cloud security " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Solucoes-Antivirus-Kaspersky/Antivirus-Corporativo-Kaspersky-For-Business/hybrid-cloud-security" target="_blank" rel="noopener">Kaspersky Hybrid Cloud Security</a></li>
+  <li data-search="kaspersky anti targeted attack (kata) " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Solucoes-Antivirus-Kaspersky/Antivirus-Corporativo-Kaspersky-For-Business/anti-targeted-attack" target="_blank" rel="noopener">Kaspersky Anti Targeted Attack (KATA)</a></li>
+  <li data-search="kaspersky fraud prevention " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Solucoes-Antivirus-Kaspersky/Antivirus-Corporativo-Kaspersky-For-Business/fraud-prevention" target="_blank" rel="noopener">Kaspersky Fraud Prevention</a></li>
+  <li data-search="kaspersky automated security awareness " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/Solucoes-Antivirus-Kaspersky/Antivirus-Corporativo-Kaspersky-For-Business/kaspersky-automated-security-awareness" target="_blank" rel="noopener">Kaspersky Automated Security Awareness</a></li>
+  <li data-search="kaspersky next edr optimum " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/cybersecurity/kaspersky/kaspersky-next-edr-optimum" target="_blank" rel="noopener">Kaspersky Next EDR Optimum</a></li>
+  <li data-search="kaspersky next xdr expert " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/cybersecurity/kaspersky/kaspersky-next-xdr-expert" target="_blank" rel="noopener">Kaspersky Next XDR Expert</a></li>
+  <li data-search="promoções " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/promocoes.aspx?produtos=Kaspersky" target="_blank" rel="noopener">promoções</a></li>
+</ul>
+</li>
+  <li data-search="checkpoint " class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/checkpoint" target="_blank" rel="noopener">Checkpoint</a>
+<ul >
+  <li data-search="quantum " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/produtos/checkpoint/quantum-network-security" target="_blank" rel="noopener">Quantum</a></li>
+  <li data-search="cloudguard " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/produtos/checkpoint/cloudguard" target="_blank" rel="noopener">CloudGuard</a></li>
+  <li data-search="harmony " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/produtos/checkpoint/harmony" target="_blank" rel="noopener">Harmony</a></li>
+  <li data-search="infinity-vision " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/produtos/checkpoint/infinity-vision" target="_blank" rel="noopener">Infinity-Vision</a></li>
+</ul>
+</li>
+  <li data-search="envolve ambientes seguros " class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/ambientes-seguros" target="_blank" rel="noopener">Envolve Ambientes Seguros</a>
+<ul >
+  <li data-search="containers " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/ambientes-seguros/containers" target="_blank" rel="noopener">containers</a></li>
+  <li data-search="rack seguro " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/ambientes-seguros/rack-seguro" target="_blank" rel="noopener">rack seguro</a></li>
+  <li data-search="ambientes seguros " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/ambientes-seguros/sala-segura" target="_blank" rel="noopener">ambientes seguros</a></li>
+  <li data-search="data center modular " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/ambientes-seguros/data-center-modular" target="_blank" rel="noopener">data center modular</a></li>
+  <li data-search="painéis e portas " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/ambientes-seguros/paineis-portas" target="_blank" rel="noopener">painéis e portas</a></li>
+  <li data-search="integração de sistemas " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/ambientes-seguros/integracao-sistemas" target="_blank" rel="noopener">integração de sistemas</a></li>
+</ul>
+</li>
+  <li data-search="knowbe4 " class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/knowbe4" target="_blank" rel="noopener">KnowBe4</a>
+<ul >
+  <li data-search="kmsat (kevin mitnick sat) " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/produtos/knowbe4/kmsat" target="_blank" rel="noopener">KMSAT (Kevin Mitnick SAT)</a></li>
+  <li data-search="esat (enterprise sat) " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/produtos/knowbe4/esat" target="_blank" rel="noopener">ESAT (Enterprise SAT)</a></li>
+  <li data-search="phisher " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/produtos/knowbe4/phisher" target="_blank" rel="noopener">PhishER</a></li>
+  <li data-search="phisher plus " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/produtos/knowbe4/phisher-plus" target="_blank" rel="noopener">PhishER Plus</a></li>
+  <li data-search="securitycoach " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/produtos/knowbe4/securitycoach" target="_blank" rel="noopener">SecurityCoach</a></li>
+  <li data-search="compliance plus " ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/produtos/knowbe4/compliance-plus" target="_blank" rel="noopener">Compliance Plus</a></li>
+</ul>
+</li>
+  <li data-search="veeam " class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/veeam" target="_blank" rel="noopener">Veeam</a></li>
+  <li data-search="google secops " class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/google/google-secops" target="_blank" rel="noopener">Google SecOps</a>
+<ul >
+  <li data-search="google cloud platform  [5]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/google/google-cloud" target="_blank" rel="noopener">Google Cloud Platform</a><span class="badge dup">5</span></li>
+  <li data-search="google workspace  [4]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/google/google-workspace" target="_blank" rel="noopener">Google Workspace</a><span class="badge dup">4</span></li>
+  <li data-search="google secops  [3]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/google/google-chronicle" target="_blank" rel="noopener">Google SecOps</a><span class="badge dup">3</span></li>
+  <li data-search="gemini  [3]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Produtos/google/gemini-ia-generativa" target="_blank" rel="noopener">Gemini</a><span class="badge dup">3</span></li>
+</ul>
+</li>
+  <li data-search="microsoft defender for business " class="cat-child cat-last"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/produtos/microsoft/microsoft-defender-for-business" target="_blank" rel="noopener">Microsoft Defender for Business</a>
+<ul >
+  <li data-search="solo endpoint protection  [2]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Projetos-Servicos/solo-endpoint-protection" target="_blank" rel="noopener">Solo Endpoint Protection</a><span class="badge dup">2</span></li>
+  <li data-search="solo colaboração  [2]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Projetos-Servicos/solo-colaboracao" target="_blank" rel="noopener">Solo Colaboração</a><span class="badge dup">2</span></li>
+  <li data-search="solo noc  [3]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Projetos-Servicos/solo-monitoramento-unificado-noc" target="_blank" rel="noopener">Solo NOC</a><span class="badge dup">3</span></li>
+  <li data-search="solo firewall  [2]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/Projetos-Servicos/solo-firewall" target="_blank" rel="noopener">Solo Firewall</a><span class="badge dup">2</span></li>
+</ul>
+</li>
+</ul>
+</li>
+  <li data-search="notícias " class="root-item"><span class="category">Notícias</span>
+<ul >
+  <li class="cat-header" data-search="novidades sobre a solo"><span class="arrow">↳</span> <span class="cat-label">Novidades Sobre a Solo</span></li>
+  <li data-search="notícias " class="cat-child cat-last"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/noticias" target="_blank" rel="noopener">Notícias</a></li>
+  <li class="cat-header" data-search="artigos sobre tecnologia"><span class="arrow">↳</span> <span class="cat-label">Artigos sobre Tecnologia</span></li>
+  <li data-search="blog " class="cat-child cat-last"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/blog" target="_blank" rel="noopener">Blog</a></li>
+  <li class="cat-header" data-search="assessoria de imprensa"><span class="arrow">↳</span> <span class="cat-label">Assessoria de Imprensa</span></li>
+  <li data-search="sala de imprensa " class="cat-child cat-last"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/assessoria-de-imprensa" target="_blank" rel="noopener">Sala de Imprensa</a></li>
+</ul>
+</li>
+  <li data-search="contato " class="root-item"><span class="category">Contato</span>
+<ul >
+  <li class="cat-header" data-search="comercial"><span class="arrow">↳</span> <span class="cat-label">Comercial</span></li>
+  <li data-search="fale conosco " class="cat-child cat-last"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/contato" target="_blank" rel="noopener">Fale Conosco</a>
+<ul >
+  <li data-search="empresa  [4]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/sobre-nos/nossa-empresa" target="_blank" rel="noopener">Empresa</a><span class="badge dup">4</span></li>
+</ul>
+</li>
+  <li class="cat-header" data-search="suporte"><span class="arrow">↳</span> <span class="cat-label">Suporte</span></li>
+  <li data-search="informações de suporte " class="cat-child"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/suporte" target="_blank" rel="noopener">Informações de Suporte</a></li>
+  <li data-search="gestão de incidentes " class="cat-child cat-last"><span class="arrow">↳</span> <a href="https://centraldeservicos.solonetwork.com.br" target="_blank" rel="noopener">Gestão de Incidentes</a></li>
+  <li class="cat-header" data-search="compliance"><span class="arrow">↳</span> <span class="cat-label">Compliance</span></li>
+  <li data-search="canal de ética " class="cat-child cat-last"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/contato-comite-etica" target="_blank" rel="noopener">Canal de Ética</a></li>
+  <li class="cat-header" data-search="ouvidoria"><span class="arrow">↳</span> <span class="cat-label">Ouvidoria</span></li>
+  <li data-search="contato ouvidoria " class="cat-child cat-last"><span class="arrow">↳</span> <a href="https://solonetwork.com.br/contato-ouvidoria" target="_blank" rel="noopener">Contato Ouvidoria</a>
+<ul >
+  <li data-search="empresa  [5]" ><span class="arrow">↳</span> <a href="https://solonetwork.com.br/sobre-nos/nossa-empresa" target="_blank" rel="noopener">Empresa</a><span class="badge dup">5</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <footer>Solo Network - Site Map • Abril 2026</footer>
+  <script>
+    const searchInput = document.getElementById('search');
+    const noResults   = document.getElementById('no-results');
+    function getAllLi() { return document.querySelectorAll('#tree li:not(.root-item):not(.cat-header)'); }
+    function showAll()  { document.querySelectorAll('#tree li').forEach(li => li.classList.remove('hidden')); }
+    function filterTree(query) {
+      if (!query) { showAll(); noResults.style.display = 'none'; return; }
+      const q = query.toLowerCase();
+      let matchCount = 0;
+      getAllLi().forEach(li => li.classList.add('hidden'));
+      getAllLi().forEach(li => {
+        const text  = (li.dataset.search || li.innerText).toLowerCase();
+        const match = text.includes(q);
+        if (match) {
+          li.classList.remove('hidden');
+          matchCount++;
+          let parent = li.parentElement;
+          while (parent && parent.id !== 'tree') {
+            if (parent.tagName === 'LI') parent.classList.remove('hidden');
+            parent = parent.parentElement;
+          }
+        }
+      });
+      document.querySelectorAll('#tree li.root-item, #tree li.cat-header').forEach(li => li.classList.remove('hidden'));
+      noResults.style.display = matchCount === 0 ? 'block' : 'none';
+    }
+    searchInput.addEventListener('input', e => filterTree(e.target.value.trim()));
+  </script>
+</body>
+</html>
